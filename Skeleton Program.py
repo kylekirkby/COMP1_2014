@@ -134,7 +134,17 @@ def GetPlayerName():
 
 def GetChoiceFromUser():
   Choice = input('Do you think the next card will be higher than the last card (enter y or n)? ')
-  return Choice
+  newChoice = Choice.lower()
+  yes = "y"
+  no = "n"
+  if newChoice == "y":
+    return yes
+  elif newChoice == "yes":
+    return yes
+  elif newChoice == "no":
+    return no
+  elif newChoice == "n":
+    return no
 
 def DisplayEndOfGameMessage(Score):
   print()
