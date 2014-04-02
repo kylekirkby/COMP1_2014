@@ -78,7 +78,10 @@ def DisplayMenu():
 def GetMenuChoice():
   Choice = input()
   print()
-  return Choice
+  newChoice = Choice[0]
+  newChoice = newChoice.lower()
+
+  return newChoice
 
 def LoadDeck(Deck):
   CurrentFile = open('deck.txt', 'r')
