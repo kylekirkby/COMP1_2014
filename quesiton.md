@@ -9,21 +9,21 @@
 ##Psuedo Code
 
 
-FUNCTION GetPlayerName():
-nameAccepted: Boolean
-nameAccepted <- False
+	FUNCTION GetPlayerName():
+	nameAccepted: Boolean
+	nameAccepted <- False
 
-WHILE nameAccepted != True DO:
-	INPUT PlayerName
-	IF PlayerName != "" DO:
-		nameAccepted <- True
-	END IF
-	ELSE DO:
-		OUTPUT "Your name must not be left blank!"
-	END ELSE
-	
-RETURN PlayerName
-END FUNCTION
+	WHILE nameAccepted != True DO:
+		INPUT PlayerName
+		IF PlayerName != "" DO:
+			nameAccepted <- True
+		END IF
+		ELSE DO:
+			OUTPUT "Your name must not be left blank!"
+		END ELSE
+		
+	RETURN PlayerName
+	END FUNCTION
 
 ##Question 3b - Adding your score to the high score table
 
