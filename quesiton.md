@@ -28,3 +28,9 @@
 ##Question 3b - Adding your score to the high score table
 
 1. The function which is responsible for addding the scores to the table is the UpdateRecentScores() function
+
+## Task 5 - Date of recent scores
+
+1. The datetime module will need to be imported to use the date/time functions in python.
+2. The four functions that will need to be changed for the date to be added is the DisplayRecentScores, UpdateRecentScores, ResetRecentScores and adding a attribute to the TRecentScore class (record)
+3. To convert a string to a datetime object you need to use the strptime function within the datetime module - "time.strptime("30 Nov 00", "%d %b %y")"
