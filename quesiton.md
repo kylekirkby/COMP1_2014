@@ -47,12 +47,32 @@ example would be the Count Variable used in the displayRecentScores function.
 
 #### Most Recent Holder
 
+Stores the latest value from a series of inputs.
+
 #### Most wanted holder
+
+Stores the most desirable value encountered so far.
 
 #### Gatherer
 
+Keeps the total of a calculation as it is being executed. For example if you were calculating the sum of a series of integers the gatherer variable will keep the total whilst the numbers are being added.
+
 #### Transformation
+
+A transformation variable gets its values from a fixed calculation. 
 
 #### Follower
 
+The follower variable stores the old value of a variable that is changing its value.
+
 #### Temporary
+
+The temporary variable stores a value briefly while another operation is happening. In a bubble sort, the values to be change are stored in a temporary variable in order to replace the old values.
+
+
+### Functions and Parameters - reference or value parameters
+
+#### Questions ####
+
+1. When a parameter is passed in by value, the parameter value is written within the parameters of the functions and is used parameters when called. Howerver when a parameter is passed in by reference, the value is stored in a variable and the variable is referenced as the parameter.
+2. 
