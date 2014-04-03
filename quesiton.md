@@ -27,10 +27,32 @@
 
 ##Question 3b - Adding your score to the high score table
 
-1. The function which is responsible for addding the scores to the table is the UpdateRecentScores() function
+1. The function which is responsible for adding the scores to the table is the UpdateRecentScores() function
 
 ## Task 5 - Date of recent scores
 
 1. The datetime module will need to be imported to use the date/time functions in python.
 2. The four functions that will need to be changed for the date to be added is the DisplayRecentScores, UpdateRecentScores, ResetRecentScores and adding a attribute to the TRecentScore class (record)
 3. To convert a string to a datetime object you need to use the strptime function within the datetime module - "time.strptime("30 Nov 00", "%d %b %y")"
+
+##Additional Task - Variable Roles
+
+### Variable Roles
+
+#### Fixed Value 
+A value that does not change and has a fixed value. E.g. a constant like the number of Recent scores to display - "NO_OF_RECENT_SCORES"
+#### Stepper 
+A stepper variable keeps count of the number of iterations currently completed and can be used to identify which iteration the loop is currently on. E.g in this program an
+example would be the Count Variable used in the displayRecentScores function. 
+
+#### Most Recent Holder
+
+#### Most wanted holder
+
+#### Gatherer
+
+#### Transformation
+
+#### Follower
+
+#### Temporary
