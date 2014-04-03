@@ -24,3 +24,7 @@ WHILE nameAccepted != True DO:
 	
 RETURN PlayerName
 END FUNCTION
+
+##Question 3b - Adding your score to the high score table
+
+1. The function which is responsible for addding the scores to the table is the UpdateRecentScores() function
