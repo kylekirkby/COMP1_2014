@@ -141,6 +141,7 @@ def GetPlayerName():
       print("Your name must not be blank!")
     
     print()
+    
   return PlayerName
 
 def GetChoiceFromUser():
@@ -191,6 +192,9 @@ def DisplayRecentScores(RecentScores):
 
 def UpdateRecentScores(RecentScores, Score):
   choice = input("Do you wish to add your score to the results table?(y/n): ")
+  choice = choice.lower()
+  choice = choice[0]
+
   
   if choice == "y":
     add = True
