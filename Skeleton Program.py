@@ -81,7 +81,6 @@ def GetMenuChoice():
   print()
   newChoice = Choice[0]
   newChoice = newChoice.lower()
-
   return newChoice
 
 def LoadDeck(Deck):
@@ -275,3 +274,5 @@ if __name__ == '__main__':
       DisplayRecentScores(RecentScores)
     elif Choice == '4':
       ResetRecentScores(RecentScores)
+    else:
+      print("Choice not valid!")
