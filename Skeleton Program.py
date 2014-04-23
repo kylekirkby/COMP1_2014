@@ -7,7 +7,7 @@
 import random, datetime
 
 NO_OF_RECENT_SCORES = 3
-
+ACE_HIGH = False
 class TCard():
   def __init__(self):
     self.Suit = 0
@@ -64,7 +64,6 @@ def GetSuit(SuitNo):
   elif SuitNo == 4:
     Suit = 'Spades'
   return Suit
-
 def DisplayMenu():
   print()
   print('MAIN MENU')
@@ -73,6 +72,7 @@ def DisplayMenu():
   print('2. Play game (without shuffle)')
   print('3. Display recent scores')
   print('4. Reset recent scores')
+  print('5. Options')
   print()
   print('Select an option from the menu (or enter q to quit): ', end='')
 
@@ -181,10 +181,10 @@ def ResetRecentScores(RecentScores):
 def DisplayRecentScores(RecentScores):
   print()
   print('Recent Scores: ')
-  print('{0:<20}{1:<40}{2:<60}'.format("Name","Score","Date"))
+  print('{0:<10}{1:<10}{2:<10}'.format("Name","Score","Date"))
 
   for Count in range(1, NO_OF_RECENT_SCORES + 1):
-    print('{0:<20}{1:<40}{2:<60}'.format(RecentScores[Count].Name,RecentScores[Count].Score,RecentScores[Count].Date))
+    print('{0:<10}{1:<10}{2:<10}'.format(RecentScores[Count].Name,RecentScores[Count].Score,RecentScores[Count].Date))
   print()
   print('Press the Enter key to return to the main menu')
   input()
@@ -223,7 +223,28 @@ def UpdateRecentScores(RecentScores, Score):
     RecentScores[Count].Score = Score
     CurrentDate = datetime.datetime.now()
     RecentScores[Count].Date = CurrentDate.strftime('%d/%m/%y')
+def GetOptionChoice():
+  choice = input("Please choose an option: ")
+  choice = choice.lower()
+  choice = choice[0]
+  return choice
+def SetAceHighOrLow():
+  AceSetting = input("Do you want the Ace to be (h)igh or (l)ow: ")
+  
+def SetOptions(option):
+  if NewChoice == '1':
+    SetAceHighOrLow()
+  else:
+    print("Not a valid Choice!")
+
     
+def DisplayOptions():
+  print("OPTIONS MENU")
+  print()
+  print("1.Set Ace to be HIGH or LOW")
+  NewChoice = GetOptionChoice()
+  SetOptions(NewChoice)
+
 
 def PlayGame(Deck, RecentScores):
   LastCard = TCard()
@@ -278,5 +299,6 @@ if __name__ == '__main__':
       DisplayRecentScores(RecentScores)
     elif Choice == '4':
       ResetRecentScores(RecentScores)
-    else:
-      print("Choice not valid!")
+    elif Choice == '5':
+      DisplayOptions()
+    
