@@ -25,33 +25,61 @@ Choice = ''
 
 def GetRank(RankNo):
   Rank = ''
-  if RankNo == 1:
-    Rank = 'Ace'
-  elif RankNo == 2:
-    Rank = 'Two'
-  elif RankNo == 3:
-    Rank = 'Three'
-  elif RankNo == 4:
-    Rank = 'Four'
-  elif RankNo == 5:
-    Rank = 'Five'
-  elif RankNo == 6:
-    Rank = 'Six'
-  elif RankNo == 7:
-    Rank = 'Seven'
-  elif RankNo == 8:
-    Rank = 'Eight'
-  elif RankNo == 9:
-    Rank = 'Nine'
-  elif RankNo == 10:
-    Rank = 'Ten'
-  elif RankNo == 11:
-    Rank = 'Jack'
-  elif RankNo == 12:
-    Rank = 'Queen'
-  elif RankNo == 13:
-    Rank = 'King'
-  return Rank
+  if ACE_HIGH == False:
+    if RankNo == 1:
+      Rank = 'Ace'
+    elif RankNo == 2:
+      Rank = 'Two'
+    elif RankNo == 3:
+      Rank = 'Three'
+    elif RankNo == 4:
+      Rank = 'Four'
+    elif RankNo == 5:
+      Rank = 'Five'
+    elif RankNo == 6:
+      Rank = 'Six'
+    elif RankNo == 7:
+      Rank = 'Seven'
+    elif RankNo == 8:
+      Rank = 'Eight'
+    elif RankNo == 9:
+      Rank = 'Nine'
+    elif RankNo == 10:
+      Rank = 'Ten'
+    elif RankNo == 11:
+      Rank = 'Jack'
+    elif RankNo == 12:
+      Rank = 'Queen'
+    elif RankNo == 13:
+      Rank = 'King'
+  else:
+    if RankNo == 1:
+      Rank = 'Two'
+    elif RankNo == 2:
+      Rank = 'Three'
+    elif RankNo == 3:
+      Rank = 'Four'
+    elif RankNo == 4:
+      Rank = 'Five'
+    elif RankNo == 5:
+      Rank = 'Six'
+    elif RankNo == 6:
+      Rank = 'Seven'
+    elif RankNo == 7:
+      Rank = 'Eight'
+    elif RankNo == 8:
+      Rank = 'Nine'
+    elif RankNo == 9:
+      Rank = 'Ten'
+    elif RankNo == 10:
+      Rank = 'Jack'
+    elif RankNo == 11:
+      Rank = 'Queen'
+    elif RankNo == 12:
+      Rank = 'King'
+    elif RankNo == 13:
+      Rank = 'Ace'
+    return Rank
 
 def GetSuit(SuitNo):
   Suit = ''
@@ -229,10 +257,20 @@ def GetOptionChoice():
   choice = choice[0]
   return choice
 def SetAceHighOrLow():
-  AceSetting = input("Do you want the Ace to be (h)igh or (l)ow: ")
+  valid = False
+  while valid != True:
+    AceSetting = input("Do you want the Ace to be (h)igh or (l)ow: ")
+    if AceSetting == 'h':
+      ACE_HIGH = True
+      valid = True
+    elif AceSetting == 'l':
+      ACE_HIGH = False
+      valid = True
+    else:
+      print("Not a valid setting!")
   
 def SetOptions(option):
-  if NewChoice == '1':
+  if option == '1':
     SetAceHighOrLow()
   else:
     print("Not a valid Choice!")
