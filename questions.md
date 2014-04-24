@@ -85,3 +85,10 @@ The temporary variable stores a value briefly while another operation is happeni
 or possibly in a data file if it is required to be persistent but in this case a global variable should be sufficient.
 2. The DisplayMenu() function contains the menu options print statements.
 3. The GetRank function can be modified so that it works with the Ace being both high and low.
+
+###Testing
+In the previous section you made significant changes to the program. These changes must be tested to ensure that the program functions correctly. Using the **headings given below** to help you, write a test plan for your changes.
+
+|Test Number|Test Description|Test Data|Type|Expected Result|Actual Result|
+|-----------|----------------|---------|----|---------------|-------------|
+|1| Testing the options menu | 1 | Normal Data | Program should open the option to change ace to high or low | Program calls and runs the function to set ace to be high or low|
