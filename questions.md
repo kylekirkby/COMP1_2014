@@ -76,3 +76,12 @@ The temporary variable stores a value briefly while another operation is happeni
 
 1. When a parameter is passed in by value, the parameter value is written within the parameters of the functions and is used parameters when called. Howerver when a parameter is passed in by reference, the value is stored in a variable and the variable is referenced as the parameter.
 2. 
+
+
+
+##Task 6 Questions
+
+1. A good place to track where the ace is high or not could be the Global Variables with Global scope at the top of the python program
+or possibly in a data file if it is required to be persistent but in this case a global variable should be sufficient.
+2. The DisplayMenu() function contains the menu options print statements.
+3. The GetRank function can be modified so that it works with the Ace being both high and low.

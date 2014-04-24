@@ -1,13 +1,17 @@
 # Skeleton Program code for the AQA COMP1 Summer 2014 examination
-# this code should be used in conjunction with the Preliminary Material
-# written by the AQA Programmer Team
-# developed in the Python 3.2 programming environment
-# version 2 edited 06/03/2014
+# This code should be used in conjunction with the Preliminary Material
+# Written by the AQA Programmer Team
+# Developed in the Python 3.2 programming environment
+# Version 2 edited 06/03/2014
 
 import random, datetime
 
-NO_OF_RECENT_SCORES = 3
 ACE_HIGH = False
+
+NO_OF_RECENT_SCORES = 3
+
+
+
 class TCard():
   def __init__(self):
     self.Suit = 0
@@ -79,7 +83,8 @@ def GetRank(RankNo):
       Rank = 'King'
     elif RankNo == 13:
       Rank = 'Ace'
-    return Rank
+
+  return Rank
 
 def GetSuit(SuitNo):
   Suit = ''
@@ -257,14 +262,19 @@ def GetOptionChoice():
   choice = choice[0]
   return choice
 def SetAceHighOrLow():
+  global ACE_HIGH
   valid = False
+  print(ACE_HIGH)
   while valid != True:
     AceSetting = input("Do you want the Ace to be (h)igh or (l)ow: ")
     if AceSetting == 'h':
+      
       ACE_HIGH = True
+      print(ACE_HIGH)
       valid = True
     elif AceSetting == 'l':
       ACE_HIGH = False
+      print(ACE_HIGH)
       valid = True
     else:
       print("Not a valid setting!")
