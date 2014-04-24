@@ -92,3 +92,4 @@ In the previous section you made significant changes to the program. These chang
 |Test Number|Test Description|Test Data|Type|Expected Result|Actual Result|
 |-----------|----------------|---------|----|---------------|-------------|
 |1| Testing the options menu | 1 | Normal Data | Program should open the option to change ace to high or low | Program calls and runs the function to set ace to be high or low|
+|2| Testing the options menu | 2 | Boundary Data | Program should display "not a valid choice"| Program outputs "not a valid choice!" but returns to main menu instead |

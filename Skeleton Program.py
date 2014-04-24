@@ -211,7 +211,25 @@ def ResetRecentScores(RecentScores):
     RecentScores[Count].Score = 0
     RecentScores[Count].Date = ''
 
+    
+def BubbleSortScores(RecentScores):
+  swapped = True
+  listLength = len(RecentScores)
+  while swapped:
+      listLength -= 1
+      swapped = False
+      for count in range(listLength):
+          if RecentScores[count].Score > RecentScores[count + 1].Score:
+              temp = RecentScores[count].Score
+              RecentScores[count].Score = RecentScores[count + 1].Score
+              RecentScores[count + 1].Score = temp
+              swapped = True
+  return RecentScores
+
+
 def DisplayRecentScores(RecentScores):
+
+  RecentScores = BubbleSortScores(RecentScores)
   print()
   print('Recent Scores: ')
   print('{0:<10}{1:<10}{2:<10}'.format("Name","Score","Date"))
@@ -257,24 +275,34 @@ def UpdateRecentScores(RecentScores, Score):
     CurrentDate = datetime.datetime.now()
     RecentScores[Count].Date = CurrentDate.strftime('%d/%m/%y')
 def GetOptionChoice():
-  choice = input("Please choose an option: ")
-  choice = choice.lower()
-  choice = choice[0]
+  ChoiceOption = False
+  while ChoiceOption != True:
+    choice = input("Please choose an option: ")
+    if choice == "":
+      print("Choice must not be blank!")
+    else:
+      choice = choice.lower()
+      choice = choice[0]
+      ChoiceOption = True
+
   return choice
+
+
+
+
+
+
 def SetAceHighOrLow():
   global ACE_HIGH
   valid = False
-  print(ACE_HIGH)
   while valid != True:
     AceSetting = input("Do you want the Ace to be (h)igh or (l)ow: ")
     if AceSetting == 'h':
       
       ACE_HIGH = True
-      print(ACE_HIGH)
       valid = True
     elif AceSetting == 'l':
       ACE_HIGH = False
-      print(ACE_HIGH)
       valid = True
     else:
       print("Not a valid setting!")
@@ -283,14 +311,21 @@ def SetOptions(option):
   if option == '1':
     SetAceHighOrLow()
   else:
-    print("Not a valid Choice!")
+    print("Not a valid option!")
 
     
 def DisplayOptions():
   print("OPTIONS MENU")
   print()
   print("1.Set Ace to be HIGH or LOW")
-  NewChoice = GetOptionChoice()
+  ValidOption = False
+  while ValidOption != True:
+    NewChoice = GetOptionChoice()
+    if NewChoice == '1':
+      ValidOption = True
+    else:
+      ValidOption = False
+      print("Please choose a valid option!")
   SetOptions(NewChoice)
 
 
