@@ -40,18 +40,18 @@
 ### Variable Roles
 
 #### Fixed Value 
-A value that does not change and has a fixed value. E.g. a constant like the number of Recent scores to display - "NO_OF_RECENT_SCORES"
+A value that does not change and has a fixed value. E.g. NoOfSwaps = 1000
 #### Stepper 
 A stepper variable keeps count of the number of iterations currently completed and can be used to identify which iteration the loop is currently on. E.g in this program an
-example would be the Count Variable used in the displayRecentScores function. 
+example would be the Count Variable used in the displayRecentScores function. Count line 85 --- NoOfSwapsMadeSoFar -- Line 99 -------- NoOfCardsSoFar -- 199
 
 #### Most Recent Holder
 
-Stores the latest value from a series of inputs.
-
+Stores the latest value from a series of inputs. Choice variable is an example(PlayGame() function) -- 197 ------ LastCard on line 187 
+LineFromFile in LoadDeck Function is an example too.
 #### Most wanted holder
 
-Stores the most desirable value encountered so far.
+Stores the most desirable value encountered so far. NextCard holds the latest card to compare against
 
 #### Gatherer
 
@@ -59,23 +59,25 @@ Keeps the total of a calculation as it is being executed. For example if you wer
 
 #### Transformation
 
-A transformation variable gets its values from a fixed calculation. 
+A transformation variable gets its values from a fixed calculation. Higher variable line 200 in PlayGame() Function
+FoundSpace line 171 -- dependent on if statement
 
 #### Follower
 
-The follower variable stores the old value of a variable that is changing its value.
+The follower variable stores the old value of a variable that is changing its value. LastCard - follows on from next card stores the old value of NextCard
 
 #### Temporary
 
 The temporary variable stores a value briefly while another operation is happening. In a bubble sort, the values to be change are stored in a temporary variable in order to replace the old values.
-
+SwapSpace is use as a temp variable to swap values around.
 
 ### Functions and Parameters - reference or value parameters
 
 #### Questions ####
 
-1. When a parameter is passed in by value, the parameter value is written within the parameters of the functions and is used parameters when called. Howerver when a parameter is passed in by reference, the value is stored in a variable and the variable is referenced as the parameter.
-2. 
+1. A parameter that is passed by reference alters the original copy and a parameter that is passed by value makes a copy of the variable 
+2.  Passed by reference --- ThisCard (as it is a record (class)) 
+3. Passed by value --- Score line 139 --- not a record or list and is copied from the original
 
 
 
