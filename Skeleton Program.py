@@ -211,53 +211,29 @@ def ResetRecentScores(RecentScores):
     RecentScores[Count].Score = 0
     RecentScores[Count].Date = ''
 
-    
-def BubbleSortScores(RecentScores):
-  swapped = True
-  listLength = len(RecentScores) + 1
-  
-  while swapped:
-      listLength -= 1
-      swapped = False
-      for count in range(listLength):
-          count + 1
-          if RecentScores[count].Score > RecentScores[count + 1].Score:
 
-              #temp values
-            
-              temp = RecentScores[count].Score
-              tempName = RecentScores[count].Name
-              tempDate = RecentScores[count].Date
-              
-              #Change Over
-              
-              RecentScores[count].Score = RecentScores[count + 1].Score
-              RecentScores[count].Name = RecentScores[count + 1].Name
-              RecentScores[count].Date = RecentScores[count + 1].Date
-              
-              RecentScores[count + 1].Score = temp
-              RecentScores[count + 1].Name = tempName
-              RecentScores[count + 1].Date = tempDate
-              
-              swapped = True
-  return RecentScores
+
 
 
 def DisplayRecentScores(RecentScores):
 
-  RecentScores = BubbleSortScores(RecentScores)
+  Finished = False
 
-  print(RecentScores)
-  for each in RecentScores:
-    print(each.Name,each.Date,each.Score)
-    print()
-
+  while Finished != True:
+    Finished = True
+    index = 1
+    for index in range(1,(len(RecentScores) - 1)):
+      if RecentScores[index].Score < RecentScores[index + 1].Score:
+        Finished = False
+        Temp = RecentScores[index]
+        RecentScores[index] = RecentScores[index + 1]
+        RecentScores[index + 1] = Temp
     
   print()
   print('Recent Scores: ')
   print('{0:<10}{1:<10}{2:<10}'.format("Name","Score","Date"))
-
-  for each in RecentScores:
+  
+  for each in RecentScores[1:]:
     print('{0:<10}{1:<10}{2:<10}'.format(each.Name,each.Score,each.Date))
   print()
   print('Press the Enter key to return to the main menu')
