@@ -106,6 +106,7 @@ def DisplayMenu():
   print('3. Display recent scores')
   print('4. Reset recent scores')
   print('5. Options')
+  print('6. Save Scores')
   print()
   print('Select an option from the menu (or enter q to quit): ', end='')
 
@@ -212,9 +213,6 @@ def ResetRecentScores(RecentScores):
     RecentScores[Count].Date = ''
 
 
-
-
-
 def DisplayRecentScores(RecentScores):
 
   Finished = False
@@ -232,9 +230,10 @@ def DisplayRecentScores(RecentScores):
   print()
   print('Recent Scores: ')
   print('{0:<10}{1:<10}{2:<10}'.format("Name","Score","Date"))
-  
-  for each in RecentScores[1:]:
-    print('{0:<10}{1:<10}{2:<10}'.format(each.Name,each.Score,each.Date))
+
+  index = 1
+  for index in range(1,(len(RecentScores) - 1)):
+    print('{0:<10}{1:<10}{2:<10}'.format(RecentScores[index].Name,RecentScores[index].Score,RecentScores[index].Date))
   print()
   print('Press the Enter key to return to the main menu')
   input()
@@ -287,6 +286,15 @@ def GetOptionChoice():
   return choice
 
 
+def SaveScores(RecentScores):
+  
+  with open("save_scores.txt",mode="w",encoding="utf-8") as SaveFile:
+    for Score in RecentScores:
+      if Score != None:
+        if Score.Name != "":
+          SaveFile.write(Score.Date.strftime("%d/%m/%Y")+",")
+          SaveFile.write(Score.Name+",")
+          SaveFile.write(str(Score.Score)+"\n")
 
 
 
@@ -383,4 +391,5 @@ if __name__ == '__main__':
       ResetRecentScores(RecentScores)
     elif Choice == '5':
       DisplayOptions()
-    
+    elif Choice == '6':
+      SaveScores(RecentScores)
