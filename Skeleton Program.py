@@ -232,7 +232,7 @@ def DisplayRecentScores(RecentScores):
   print('{0:<10}{1:<10}{2:<10}'.format("Name","Score","Date"))
 
   index = 1
-  for index in range(1,(len(RecentScores) - 1)):
+  for index in range(1,(len(RecentScores))):
     print('{0:<10}{1:<10}{2:<10}'.format(RecentScores[index].Name,RecentScores[index].Score,RecentScores[index].Date))
   print()
   print('Press the Enter key to return to the main menu')
